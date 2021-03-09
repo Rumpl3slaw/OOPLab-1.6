@@ -29,6 +29,8 @@ private:
 		void Init(string name, int age, string sex, double weight);
 		void Display() const;
 		void Read();
+
+
 	};
 
 	Man man;
@@ -43,5 +45,8 @@ public:
 	void Init(int kurs, Student::Man man);
 	void Display() const;
 	void Read();
+	int Kurs(int kurs);
+
+
 
 };

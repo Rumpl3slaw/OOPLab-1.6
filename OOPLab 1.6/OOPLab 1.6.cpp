@@ -10,18 +10,18 @@ void Student::Init(int kurs, Student::Man man)
 }
 void Student::Display() const
 {
-	cout << "Про людину:" << endl;
 	man.Display();
-	cout << "Курс = " << kurs << endl;
 }
 void Student::Read()
 {
-	int kurs;
+	int kursslav;
 	Student::Man m;
 	cout << "Про людину: " << endl;
 	m.Read();
-	cout << "Курс = ";cin >> kurs;
-	Init(kurs, m);
+	cout << "Курс = ";cin >> kursslav;
+	Init(kursslav, m);
+	cout << "Про людину:" << endl;
+	Kurs(kurs);
 }
 void Student::Man::Init(string name, int age, string sex, double weight)
 {
@@ -48,4 +48,14 @@ void Student::Man::Read()
 	cout << "Вкажіть стать = ";cin >> sex;
 	cout << "Скажіть вагу = ";cin >> weight;
 	Init(name, age, sex, weight);
+}
+int Student::Kurs(int kurs) 
+{
+	int K = kurs;
+	if (kurs < 6)
+		K = kurs + 1;
+	else
+		cout << "6 - Це випускний курс!" << kurs << endl;
+	cout << "Курс = " << K << endl;
+	return kurs;
 }
